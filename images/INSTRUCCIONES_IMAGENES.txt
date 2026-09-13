@@ -1,0 +1,67 @@
+========================================================================
+GUÍA PARA COLOCAR TUS PROPIAS FOTOGRAFÍAS EN LA INVITACIÓN DE BODA
+========================================================================
+
+Para reemplazar las imágenes con tus archivos en alta calidad, solo guarda tus fotos
+dentro de esta carpeta "images" con los siguientes nombres:
+
+1. foto1-portada.jpg
+   -> Foto de la portada principal (manos entrelazadas en blanco y negro o la que prefieras).
+   -> Orientación: Vertical u horizontal amplia.
+
+2. foto2-pareja.jpg
+   -> Foto en primer plano de los novios (ubicada debajo del reproductor de música).
+   -> Orientación: Vertical (proporción aprox. 3:4).
+
+3. foto3-escalera.jpg
+   -> Foto de la pareja sentada en la escalera (columna izquierda del dúo de fotos).
+   -> Orientación: Vertical.
+
+4. foto4-balcon.jpg
+   -> Foto de la pareja de pie en el balcón (columna derecha del dúo de fotos).
+   -> Orientación: Vertical.
+
+5. foto5-arco.jpg
+   -> Foto de la pareja con corte en arco superior (ubicada al lado de "Ceremonia / Llamita Hotel").
+   -> Orientación: Vertical.
+
+6. foto6-vestimenta.jpg
+   -> Foto de fondo para la tarjeta de "Código de Vestimenta" (beso en la mejilla).
+   -> Orientación: Horizontal o vertical.
+
+7. foto7-camioneta.jpg
+   -> Foto panorámica de los novios junto al vehículo antiguo / camioneta.
+   -> Orientación: Horizontal.
+
+8. foto8-canciones.jpg
+   -> Foto artística de fondo para "Sugerencia de canciones" (los novios en ambiente tenue o noche).
+   -> Orientación: Horizontal o cuadrada.
+
+9. foto9-ramo.jpg
+   -> Foto panorámica de los novios en el banco azul sosteniendo el ramo de flores.
+   -> Orientación: Horizontal.
+
+10. qr-album.png
+    -> Imagen con el código QR para que los invitados escaneen y suban sus fotos.
+    -> Por defecto genera automáticamente el código oficial que apunta a:
+       https://photos.app.goo.gl/yvXL47QmpJt2anZp7
+
+11. foto11-brindis.jpg
+    -> Foto de fondo para el brindis final y despedida "L & W" (dos copas brindando).
+    -> Orientación: Horizontal o cuadrada.
+
+12. icono.png
+    -> Icono pequeño (favicon) que aparece en la pestaña del navegador (opcional).
+
+13. cancion.mp3 / cancion.m4a (Incluidos y listos)
+    -> Ya está incluida la canción oficial: "[They Long To Be] Close To You" (The Carpenters).
+    -> Si en el futuro deseas cambiar la canción por otra:
+       a) Puedes reemplazar el archivo "cancion.mp3" por tu propio archivo de audio.
+       b) O puedes cambiar la constante YOUTUBE_URL_OR_ID en "script.js" con el nuevo enlace de YouTube.
+
+========================================================================
+NOTA IMPORTANTE:
+Mientras no pongas tus fotos locales, la página web cargará automáticamente 
+las imágenes originales en alta resolución desde el servidor, por lo que tu 
+sitio web ya se visualiza completo y hermoso desde este mismo instante.
+========================================================================

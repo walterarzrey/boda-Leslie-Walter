@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Leslie & Walter — Nuestra Boda</title>
+    <meta name="description" content="¡Nos casamos! Queremos compartir este día tan especial contigo. 21 de Noviembre de 2026.">
+
+    <!-- Metadatos para compartir en WhatsApp, Facebook e Instagram (OpenGraph) -->
+    <meta property="og:title" content="Leslie & Walter — ¡Nos Casamos!">
+    <meta property="og:description" content="Acompáñanos a celebrar nuestra boda este 21 de Noviembre de 2026 en Hualhuas, Huancayo.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/1e700d1ab1e483386ec330f156a7651f.jpg">
+
+    <link rel="icon" href="images/icono.png" type="image/png">
+
+    <!-- Tipografías elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Forum&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=20260912_v4">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <!-- =========================================================
+         0. MODAL DE BIENVENIDA / ENTRADA (AUDIO GARANTIZADO)
+         ========================================================= -->
+    <div id="welcome-modal" class="welcome-modal">
+        <div class="welcome-card shadow-card">
+            <p class="welcome-subtitle">NUESTRA BODA</p>
+            <h2 class="welcome-names">Leslie &amp; Walter</h2>
+            <p class="welcome-date-badge">21 DE NOVIEMBRE DE 2026</p>
+            <button type="button" id="btn-open-invite" class="btn-open-invite">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>Abrir Invitación</span>
+            </button>
+            <span class="welcome-note">♫ Toca para ingresar con música</span>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         CONTENEDOR PRINCIPAL FLUIDO Y 100% RESPONSIVO
+         ========================================================= -->
+    <div class="invitation-wrapper">
+
+        <!-- =====================================================
+             1. HERO / PORTADA
+             (FOTO 1: foto1-portada.jpg)
+             ===================================================== -->
+        <header class="hero-header">
+            <!-- Imagen de fondo de la portada (manos entrelazadas en blanco y negro) -->
+            <img class="hero-bg" 
+                 src="images/foto1-portada.jpg" 
+                 onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/1e700d1ab1e483386ec330f156a7651f.jpg';" 
+                 alt="Leslie & Walter">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Leslie & Walter</h1>
+            </div>
+        </header>
+
+        <!-- =====================================================
+             2. BIENVENIDA, MÚSICA Y FOTO DE LA PAREJA
+             ===================================================== -->
+        <section class="section section-welcome section-fade">
+            <div class="container-narrow">
+                <h2 class="title-serif uppercase tracking">¡¡Nos Casamos!!</h2>
+                <p class="welcome-text">
+                    ¡Así es, nos alegra dar el gran paso!<br>
+                    Y queremos que seas parte de este día tan especial y celebres con nosotros.
+                </p>
+
+                <!-- REPRODUCTOR DE MÚSICA -->
+                <div class="music-player-box">
+                    <p class="music-instruction" id="music-instruction">
+                        Presiona el <span class="heart-text-icon">❤</span> para escuchar nuestra canción
+                    </p>
+                    
+                    <div class="player-controls">
+                        <button type="button" class="btn-ctrl btn-prev" id="btn-prev" aria-label="Anterior">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn-ctrl btn-heart-play" id="btn-play-pause" aria-label="Reproducir o Pausar">
+                            <svg class="heart-svg" viewBox="0 0 24 24" width="28" height="28">
+                                <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            <span class="music-note-float note-1">♪</span>
+                            <span class="music-note-float note-2">♫</span>
+                        </button>
+                        <button type="button" class="btn-ctrl btn-next" id="btn-next" aria-label="Siguiente">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Elemento de audio con fallback a YouTube o archivo local mp3 -->
+                    <audio id="bg-audio" preload="auto" loop>
+                        <source src="cancion.mp3" type="audio/mpeg">
+                        <source src="cancion.m4a" type="audio/mp4">
+                    </audio>
+                    <!-- Contenedor para el reproductor de YouTube API -->
+                    <div id="youtube-player-container" class="hidden-youtube">
+                        <div id="youtube-player"></div>
+                    </div>
+                </div>
+
+                <!-- FOTO 2: foto2-pareja.jpg (Primer plano romántico de la pareja) -->
+                <div class="photo-frame-center">
+                    <img src="images/foto2-pareja.jpg" 
+                         onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/dd5aaed8f0240ff5c61984ce3147851a.png';" 
+                         alt="Leslie y Walter" 
+                         class="img-rounded shadow-card">
+                </div>
+
+                <!-- FECHA PRINCIPAL -->
+                <h3 class="wedding-main-date">21 de Noviembre 2026</h3>
+
+                <!-- CONTADOR REGRESIVO PRINCIPAL (TOP) -->
+                <div class="countdown-top-wrapper">
+                    <p class="countdown-top-badge uppercase tracking">¿Cuánto falta para el gran día?</p>
+                    <div class="countdown-container countdown-top" id="countdown-top">
+                        <div class="countdown-box">
+                            <span class="time-number time-days">00</span>
+                            <span class="time-label">DÍAS</span>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-box">
+                            <span class="time-number time-hours">00</span>
+                            <span class="time-label">HORAS</span>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-box">
+                            <span class="time-number time-minutes">00</span>
+                            <span class="time-label">MIN</span>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-box">
+                            <span class="time-number time-seconds">00</span>
+                            <span class="time-label">SEG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divisor ornamental -->
+                <div class="ornament-divider">
+                    <span class="dot-circle"></span>
+                    <span class="line"></span>
+                    <span class="dot-circle"></span>
+                </div>
+
+                <!-- CITA DE AMOR -->
+                <blockquote class="love-quote">
+                    “Hay historias que comienzan con un encuentro, pero se construyen con cada día compartido.<br>
+                    Y nosotros elegimos compartir la vida. 🤍<br>
+                    Con mucha alegría,<br>
+                    queremos invitarte a celebrar nuestra boda."
+                </blockquote>
+
+                <!-- Divisor ornamental -->
+                <div class="ornament-divider">
+                    <span class="dot-circle"></span>
+                    <span class="line"></span>
+                    <span class="dot-circle"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             3. PADRES Y PADRINOS
+             ===================================================== -->
+        <section class="section section-parents section-fade">
+            <div class="container-medium">
+                <h2 class="title-serif text-accent parents-headline">
+                    Con la bendición de Dios<br>y nuestros padres
+                </h2>
+
+                <div class="parents-desktop-grid">
+                    <div class="family-block">
+                        <h4 class="family-role">Padres del novio:</h4>
+                        <p class="family-names">
+                            Walter Enrique Arzapalo Rosales<br>
+                            Diana Rosana Rey Benavides
+                        </p>
+                    </div>
+
+                    <div class="family-block">
+                        <h4 class="family-role">Padres de la novia:</h4>
+                        <p class="family-names">
+                            River David Tocas Gavino<br>
+                            Elizabeth Duran Flores
+                        </p>
+                    </div>
+                </div>
+
+                <div class="family-block godparents-block">
+                    <h3 class="title-serif text-accent godparents-title">
+                        En compañía de nuestros padrinos
+                    </h3>
+                    <p class="family-names">
+                        Waldo Gonzalo Peralta Marticorena<br>
+                        Emely Agripina Ramos Paucar
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             4. GALERÍA DE FOTOS Y LUGAR DE LA CEREMONIA
+             ===================================================== -->
+        <section class="section section-ceremony section-fade">
+            <div class="container-medium">
+                <!-- Cuadrícula de 2 fotos (Escalera y Balcón) -->
+                <div class="photos-duo-grid">
+                    <!-- FOTO 3: foto3-escalera.jpg -->
+                    <div class="duo-item">
+                        <img src="images/foto3-escalera.jpg" 
+                             onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/2174ad0175a1cc0d67494b8ffd774ec2.jpg';" 
+                             alt="Leslie y Walter en la escalera" 
+                             class="shadow-card">
+                    </div>
+                    <!-- FOTO 4: foto4-balcon.jpg -->
+                    <div class="duo-item">
+                        <img src="images/foto4-balcon.jpg" 
+                             onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/2f46030c729e02baf43dee20ca5deaf3.png';" 
+                             alt="Leslie y Walter en el balcón" 
+                             class="shadow-card">
+                    </div>
+                </div>
+
+                <!-- Divisor ornamental -->
+                <div class="ornament-divider divider-narrow">
+                    <span class="dot-circle"></span>
+                    <span class="line"></span>
+                    <span class="dot-circle"></span>
+                </div>
+
+                <h3 class="title-ceremony-section">Te esperamos</h3>
+
+                <!-- Bloque de 2 columnas: Detalles a la izquierda y Foto en arco a la derecha -->
+                <div class="ceremony-details-grid">
+                    
+                    <!-- Columna Detalles y Botones -->
+                    <div class="ceremony-info-col">
+                        
+                        <div class="ceremony-info-item">
+                            <h4 class="info-label uppercase" style="font-weight: 600;">CEREMONIA:</h4>
+                            <p class="venue-name">Llamita Hotel</p>
+                            <p class="venue-address">Jr. Huancayo 445, Hualhuas - Huancayo</p>
+                            <a href="https://maps.app.goo.gl/kH6Q8wbnzHzHXR2H7" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn-pill btn-pill-outline">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="btn-icon">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                cómo llegar
+                            </a>
+                        </div>
+
+                        <div class="ceremony-info-item">
+                            <h4 class="info-label uppercase" style="font-weight: 600;">HORARIO:</h4>
+                            <p class="venue-schedule" style="font-weight: 500;">Recepción: 11:00 AM</p>
+                            <a href="https://calendar.app.google/twj6syQtMYhDRbxG7" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn-pill btn-pill-outline">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="btn-icon">
+                                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+                                </svg>
+                                Agendar
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Columna Foto con Arco Superior (FOTO 5: foto5-arco.jpg) -->
+                    <div class="ceremony-photo-col">
+                        <div class="arch-photo-container shadow-card">
+                            <img src="images/foto5-arco.jpg" 
+                                 onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/b9ae78d6220b706e7986fa75001813bb.jpg';" 
+                                 alt="Leslie & Walter en Llamita Hotel">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botón Principal ¡Confirmar! -->
+                <div class="btn-confirm-wrapper">
+                    <a href="https://forms.gle/De3VeVDBB29MtGZk6" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-pill btn-pill-wine btn-large">
+                        ¡Confirmar!
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             5. CÓDIGO DE VESTIMENTA (DRESS CODE)
+             (FOTO 6: foto6-vestimenta.jpg)
+             ===================================================== -->
+        <section class="section section-dresscode section-fade">
+            <div class="container-card">
+                <div class="dresscode-card shadow-card">
+                    <img class="dresscode-bg" 
+                         src="images/foto6-vestimenta.jpg" 
+                         onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/2e03c6ee88bef6a52ef1747cd59fbd77.jpg';" 
+                         alt="Código de vestimenta">
+                    <div class="dresscode-overlay"></div>
+                    
+                    <div class="dresscode-content">
+                        <h2 class="dresscode-title">Código de Vestimenta</h2>
+                        <p class="dresscode-type">Formal Casual</p>
+                        <p class="dresscode-note">
+                            Será al aire libre, por lo cual<br>
+                            lleva algo para cubrirte del frío más noche.
+                        </p>
+                        <a href="https://pin.it/3MV0nmiK1" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn-pill btn-pill-white">
+                            Ideas Outfit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             6. ITINERARIO (ZIG-ZAG CONTINUO IDÉNTICO A CANVA)
+             ===================================================== -->
+        <section class="section section-itinerary section-fade">
+            <div class="container-narrow">
+                <h2 class="title-serif text-accent itinerary-title">Itinerario</h2>
+
+                <!-- CONTENEDOR S-CURVE IDÉNTICO A CANVA -->
+                <div class="itinerary-zigzag-wrap">
+                    
+                    <!-- FILA 1: Recepción (Izq) -> Boda Civil (Der) -->
+                    <div class="zigzag-row row-1">
+                        <!-- 11:00 AM Recepción -->
+                        <div class="zigzag-card">
+                            <div class="zigzag-heart-badge">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </div>
+                            <div class="zigzag-icon-box">
+                                <!-- Gazebo / Carpa con aros de boda -->
+                                <svg viewBox="0 0 64 64" width="54" height="54" fill="none" stroke="#670936" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 24 L32 14 L52 24" />
+                                    <path d="M12 24 C16 27, 20 27, 24 24 C28 27, 32 27, 36 24 C40 27, 44 27, 48 24 C50 25.5, 51 25.5, 52 24" />
+                                    <line x1="16" y1="24" x2="16" y2="52" />
+                                    <line x1="48" y1="24" x2="48" y2="52" />
+                                    <path d="M16 28 C22 34, 22 42, 16 48" />
+                                    <path d="M48 28 C42 34, 42 42, 48 48" />
+                                    <circle cx="28" cy="38" r="6.5" />
+                                    <circle cx="36" cy="38" r="6.5" />
+                                    <path d="M30 14 C28 11, 28 8, 32 8 C36 8, 36 11, 34 14" />
+                                </svg>
+                            </div>
+                            <span class="zigzag-time">11:00 AM</span>
+                            <span class="zigzag-label">Recepción</span>
+                        </div>
+
+                        <!-- 01:30 PM Boda Civil -->
+                        <div class="zigzag-card">
+                            <div class="zigzag-heart-badge">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </div>
+                            <div class="zigzag-icon-box">
+                                <!-- Certificado / Acta con sello corazón -->
+                                <svg viewBox="0 0 64 64" width="54" height="54" fill="none" stroke="#670936" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="16" y="10" width="32" height="44" rx="2" />
+                                    <line x1="22" y1="18" x2="42" y2="18" />
+                                    <line x1="22" y1="24" x2="42" y2="24" />
+                                    <line x1="22" y1="30" x2="35" y2="30" />
+                                    <path fill="#670936" stroke="none" d="M32 45l-1-.9C27.4 41 25 38.8 25 36c0-2.2 1.8-4 4-4 1.2 0 2.4.6 3 1.5.6-.9 1.8-1.5 3-1.5 2.2 0 4 1.8 4 4 0 2.8-2.4 5-6 8.1l-1 .9z" />
+                                </svg>
+                            </div>
+                            <span class="zigzag-time">01:30 PM</span>
+                            <span class="zigzag-label">Boda Civil</span>
+                        </div>
+                    </div>
+
+                    <!-- FILA 2: Almuerzo (Izq) <- Ceremonia (Der) -->
+                    <div class="zigzag-row row-2" style="margin-top: -16px;">
+                        <!-- 03:00 PM Almuerzo (Izquierda) -->
+                        <div class="zigzag-card">
+                            <div class="zigzag-heart-badge">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </div>
+                            <div class="zigzag-icon-box">
+                                <!-- Plato con cubiertos en círculo -->
+                                <svg viewBox="0 0 64 64" width="54" height="54" fill="none" stroke="#670936" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="32" cy="32" r="23" stroke-width="2.2" />
+                                    <circle cx="32" cy="32" r="15" stroke-width="1.2" stroke-dasharray="2 3" />
+                                    <path d="M25 22 v6 c0 2 1.5 3.5 3.5 3.5 v10" />
+                                    <line x1="27" y1="22" x2="27" y2="28" />
+                                    <path d="M37 22 c0 0 2 2 2 6 c0 4 -2 5 -2 5 v9" />
+                                </svg>
+                            </div>
+                            <span class="zigzag-time">03:00 PM</span>
+                            <span class="zigzag-label">Almuerzo</span>
+                        </div>
+
+                        <!-- 02:00 PM Ceremonia (Derecha) -->
+                        <div class="zigzag-card">
+                            <div class="zigzag-heart-badge">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </div>
+                            <div class="zigzag-icon-box">
+                                <!-- Novia y novio con corazoncitos -->
+                                <svg viewBox="0 0 64 64" width="54" height="54" fill="none" stroke="#670936" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path fill="#670936" stroke="none" d="M26 13l-.6-.5c-2-1.8-3.4-3-3.4-4.5 0-1.2 1-2.2 2.2-2.2.7 0 1.4.3 1.8.8.4-.5 1.1-.8 1.8-.8 1.2 0 2.2 1 2.2 2.2 0 1.5-1.4 2.7-3.4 4.5l-.6.5z" />
+                                    <path fill="#670936" stroke="none" d="M38 13l-.6-.5c-2-1.8-3.4-3-3.4-4.5 0-1.2 1-2.2 2.2-2.2.7 0 1.4.3 1.8.8.4-.5 1.1-.8 1.8-.8 1.2 0 2.2 1 2.2 2.2 0 1.5-1.4 2.7-3.4 4.5l-.6.5z" />
+                                    <circle cx="23" cy="25" r="5.5" />
+                                    <path d="M14 47 C14 36, 32 36, 32 47" />
+                                    <path d="M20 37 L23 41 L26 37 Z" fill="#670936" />
+                                    <circle cx="41" cy="26" r="5.5" />
+                                    <path d="M33 47 C33 37, 49 37, 49 47" />
+                                    <path d="M33 24 C31 29, 31 42, 34 46" stroke-width="1.8" />
+                                    <path d="M49 24 C51 29, 51 42, 48 46" stroke-width="1.8" />
+                                </svg>
+                            </div>
+                            <span class="zigzag-time">02:00 PM</span>
+                            <span class="zigzag-label">Ceremonia</span>
+                        </div>
+                    </div>
+
+                    <!-- FILA 3: Palpa (Izq) -> Fiesta (Der) -->
+                    <div class="zigzag-row row-3" style="margin-top: -16px;">
+                        <!-- 04:00 PM Palpa (Izquierda) -->
+                        <div class="zigzag-card">
+                            <div class="zigzag-heart-badge">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </div>
+                            <div class="zigzag-icon-box">
+                                <!-- Cajas de regalo Palpa -->
+                                <svg viewBox="0 0 64 64" width="54" height="54" fill="none" stroke="#670936" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="18" y="20" width="16" height="28" />
+                                    <line x1="26" y1="20" x2="26" y2="48" />
+                                    <rect x="28" y="26" width="22" height="22" fill="var(--bg-paper)" />
+                                    <line x1="39" y1="26" x2="39" y2="48" />
+                                    <line x1="28" y1="37" x2="50" y2="37" />
+                                    <rect x="12" y="34" width="14" height="14" fill="var(--bg-paper)" />
+                                    <path d="M35 26 C33 22, 36 21, 39 26 C42 21, 45 22, 43 26" />
+                                </svg>
+                            </div>
+                            <span class="zigzag-time">04:00 PM</span>
+                            <span class="zigzag-label">Palpa</span>
+                        </div>
+
+                        <!-- 05:00 PM Fiesta (Derecha) -->
+                        <div class="zigzag-card">
+                            <div class="zigzag-heart-badge">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </div>
+                            <div class="zigzag-icon-box">
+                                <!-- Bola disco y parlantes con música -->
+                                <svg viewBox="0 0 64 64" width="54" height="54" fill="none" stroke="#670936" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="32" y1="5" x2="32" y2="11" />
+                                    <circle cx="32" cy="19" r="8" />
+                                    <line x1="24" y1="19" x2="40" y2="19" stroke-width="1.2" />
+                                    <line x1="32" y1="11" x2="32" y2="27" stroke-width="1.2" />
+                                    <path d="M19 12 L20 14 L22 15 L20 16 L19 18 L18 16 L16 15 L18 14 Z" fill="#670936" stroke="none"/>
+                                    <path d="M44 13 L45 14.5 L47 15 L45 15.5 L44 17 L43 15.5 L41 15 L43 14.5 Z" fill="#670936" stroke="none"/>
+                                    <rect x="14" y="32" width="16" height="20" rx="2" />
+                                    <circle cx="22" cy="38" r="2.5" />
+                                    <circle cx="22" cy="46" r="3.5" />
+                                    <rect x="34" y="32" width="16" height="20" rx="2" />
+                                    <circle cx="42" cy="38" r="2.5" />
+                                    <circle cx="42" cy="46" r="3.5" />
+                                </svg>
+                            </div>
+                            <span class="zigzag-time">05:00 PM</span>
+                            <span class="zigzag-label">Fiesta</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Amenizan -->
+                <div class="amenizan-block">
+                    <h3 class="amenizan-title text-accent">Amenizan:</h3>
+                    <p class="amenizan-item bold-text">Grupo Tropical “El Lobito”</p>
+                    <p class="amenizan-item bold-text">DJ Yerick Tolentino</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             7. BANNER FOTO CAMIONETA VINTAGE
+             (FOTO 7: foto7-camioneta.jpg)
+             ===================================================== -->
+        <div class="banner-photo-full section-fade">
+            <div class="container-card">
+                <img src="images/foto7-camioneta.jpg" 
+                     onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/ffd66d5bbfeaaa7748e45217016da3e7.jpg';" 
+                     alt="Leslie y Walter junto a la camioneta" 
+                     class="shadow-card">
+            </div>
+        </div>
+
+        <!-- =====================================================
+             8. MESA DE REGALOS / MUESTRA DE CARIÑO
+             ===================================================== -->
+        <section class="section section-gifts section-fade">
+            <div class="container-medium">
+                
+                <div class="gifts-icon-top">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="#670936">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+
+                <h2 class="title-serif text-accent gifts-headline">
+                    ¡Tu compañía es<br>el regalo más especial!
+                </h2>
+                <p class="gifts-subtitle">
+                    Si te provoca tener un detalle adicional, tu cariño irá directo a nuestro fondo de «rutas y aventuras»<br>
+                    ¡estamos ahorrando para el auto y nuestros próximos viajes!.
+                </p>
+
+                <!-- Cuentas BCP y YAPE -->
+                <div class="bank-accounts-grid">
+                    
+                    <!-- BCP -->
+                    <div class="bank-card shadow-card">
+                        <div class="bank-header">
+                            <span class="bank-badge">BCP</span>
+                        </div>
+                        <div class="account-row">
+                            <span class="account-type">NRO de cuenta:</span>
+                            <div class="copy-box">
+                                <span class="account-number" id="num-bcp">35574423930023</span>
+                                <button type="button" class="btn-copy" onclick="copyToClipboard('35574423930023', this)" aria-label="Copiar cuenta BCP">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="account-row">
+                            <span class="account-type">CCI:</span>
+                            <div class="copy-box">
+                                <span class="account-number" id="num-cci">00235517442393002361</span>
+                                <button type="button" class="btn-copy" onclick="copyToClipboard('00235517442393002361', this)" aria-label="Copiar CCI BCP">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="account-holder">Walter Arzapalo Rey</p>
+                    </div>
+
+                    <!-- YAPE -->
+                    <div class="bank-card shadow-card">
+                        <div class="bank-header">
+                            <span class="bank-badge yape-badge">YAPE</span>
+                        </div>
+                        <div class="account-row">
+                            <span class="account-type">Número de Celular:</span>
+                            <div class="copy-box">
+                                <span class="account-number yape-number" id="num-yape">995 585 320</span>
+                                <button type="button" class="btn-copy" onclick="copyToClipboard('995585320', this)" aria-label="Copiar número Yape">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="account-holder">Walter Arzapalo Rey</p>
+                    </div>
+
+                </div>
+
+                <!-- BLOQUE DE REGALO TRADICIONAL / LISTA DE REGALOS -->
+                <div class="traditional-gifts-box">
+                    <div class="traditional-gifts-divider">
+                        <span>ó</span>
+                    </div>
+                    <h3 class="traditional-gifts-title">¿Deseas apoyarnos con un regalo tradicional?</h3>
+                    <p class="traditional-gifts-desc">
+                        Si de igual forma nos deseas apoyar con un regalo para nuestro nuevo hogar, hemos preparado con mucho cariño una lista de sugerencias que nos serán de gran utilidad.
+                    </p>
+                    <button type="button" id="btn-open-giftlist" class="btn-pill btn-pill-wine btn-large btn-giftlist-trigger">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="btn-icon">
+                            <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76V14h2V8.76L15.38 12 17 10.83 14.92 8H20v6z"/>
+                        </svg>
+                        Ver Lista de Regalos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             9. SUGERENCIA DE CANCIONES
+             (FOTO 8: foto8-canciones.jpg)
+             ===================================================== -->
+        <section class="section section-songs-suggestion section-fade">
+            <div class="container-card">
+                <div class="songs-card shadow-card">
+                    <img class="songs-bg" 
+                         src="images/foto8-canciones.jpg" 
+                         onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/b3d8a04b4f91fffca52c664a2a4f902d.png';" 
+                         alt="Sugerencia de canciones">
+                    <div class="songs-overlay"></div>
+                    
+                    <div class="songs-content">
+                        <h2 class="songs-title">Sugerencia de canciones</h2>
+                        <p class="songs-description">
+                            ¿Cuáles son esas canciones que no pueden faltar en nuestra boda?<br>
+                            ¡Comparte tus favoritas con nosotros!
+                        </p>
+                        <a href="https://forms.gle/RcYMqetQYWHkHNEm6" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn-pill btn-pill-white">
+                            Click aquí
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             10. BANNER FOTO BANCO AZUL Y RAMO
+             (FOTO 9: foto9-ramo.jpg)
+             ===================================================== -->
+        <div class="banner-photo-full section-fade">
+            <div class="container-card">
+                <img src="images/foto9-ramo.jpg" 
+                     onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/e9274b58456c96e46a0b599a660ce2ab.jpg';" 
+                     alt="Leslie y Walter con el ramo" 
+                     class="shadow-card">
+            </div>
+        </div>
+
+        <!-- =====================================================
+             11. ÁLBUM DIGITAL (SUBIDA DE FOTOS Y QR)
+             (FOTO 10: qr-album.png)
+             ===================================================== -->
+        <section class="section section-album section-fade">
+            <div class="container-narrow">
+                
+                <div class="album-camera-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="#670936">
+                        <circle cx="12" cy="12" r="3.2"/>
+                        <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                    </svg>
+                </div>
+
+                <h2 class="title-serif text-accent album-title">Álbum Digital</h2>
+                
+                <p class="album-description">
+                    Comparte las fotos de la boda escaneando el QR o haciendo click al botón.<br><br>
+                    Las fotos serán recuerdos inolvidables para nosotros.<br><br>
+                    <strong>¡No podemos esperar a ver lo que capturaste!</strong>
+                </p>
+
+                <!-- CÓDIGO QR GENERADO / IMAGEN -->
+                <div class="qr-wrapper shadow-card">
+                    <a href="https://photos.app.goo.gl/yvXL47QmpJt2anZp7" target="_blank" rel="noopener noreferrer">
+                        <img src="images/qr-album.png" 
+                             onerror="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fphotos.app.goo.gl%2FyvXL47QmpJt2anZp7&color=44-11-38';" 
+                             alt="Escanear QR para subir fotos al álbum de boda" 
+                             class="qr-code-img">
+                    </a>
+                </div>
+
+                <!-- Botón Subir Fotos -->
+                <div class="btn-album-box">
+                    <a href="https://photos.app.goo.gl/yvXL47QmpJt2anZp7" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-pill btn-pill-outline btn-large">
+                        Subir fotos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             12. BRINDIS Y DESPEDIDA
+             (FOTO 11: foto11-brindis.jpg)
+             ===================================================== -->
+        <section class="section section-toast section-fade">
+            <div class="container-card">
+                <div class="toast-card shadow-card">
+                    <img class="toast-bg" 
+                         src="images/foto11-brindis.jpg" 
+                         onerror="this.onerror=null; this.src='https://central-cookies.my.canva.site/walter-y-leslie/_assets/media/3b4d4a826280a9514ebc6b81aca0062f.jpg';" 
+                         alt="Brindis de boda">
+                    <div class="toast-overlay"></div>
+
+                    <div class="toast-content">
+                        <p class="toast-text-main">
+                            Esperamos contar con tu presencia<br>
+                            y celebrar juntos este día especial.
+                        </p>
+                        <p class="toast-text-sub">
+                            Para cualquier pregunta o duda, no dudes en contactarnos.<br>
+                            ¡Estamos emocionados de verte!
+                        </p>
+                        <p class="toast-signature">Con cariño.</p>
+                        <h3 class="toast-initials">L &amp; W</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             13. CALENDARIO, CONTADOR Y CONFIRMACIÓN FINAL
+             ===================================================== -->
+        <footer class="section section-final-rsvp section-fade">
+            <div class="container-medium">
+                
+                <h3 class="calendar-month">Noviembre 2026</h3>
+
+                <!-- Tira de días con corazón en el día 21 -->
+                <div class="days-strip">
+                    <div class="day-cell">
+                        <span class="day-name">Lun</span>
+                        <span class="day-num">16</span>
+                    </div>
+                    <div class="day-cell">
+                        <span class="day-name">Mar</span>
+                        <span class="day-num">17</span>
+                    </div>
+                    <div class="day-cell">
+                        <span class="day-name">Mie</span>
+                        <span class="day-num">18</span>
+                    </div>
+                    <div class="day-cell">
+                        <span class="day-name">Jue</span>
+                        <span class="day-num">19</span>
+                    </div>
+                    <div class="day-cell">
+                        <span class="day-name">Vie</span>
+                        <span class="day-num">20</span>
+                    </div>
+                    <div class="day-cell day-active">
+                        <span class="day-name">Sab</span>
+                        <div class="day-heart-circle">
+                            <span class="day-num">21</span>
+                            <svg class="heart-calendar-svg" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contador Regresivo -->
+                <div class="countdown-container" id="countdown">
+                    <div class="countdown-box">
+                        <span class="time-number time-days" id="days">00</span>
+                        <span class="time-label">DÍAS</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="time-number time-hours" id="hours">00</span>
+                        <span class="time-label">HORAS</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="time-number time-minutes" id="minutes">00</span>
+                        <span class="time-label">MIN</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="time-number time-seconds" id="seconds">00</span>
+                        <span class="time-label">SEG</span>
+                    </div>
+                </div>
+
+                <!-- Botón Confirmar Final -->
+                <div class="final-confirm-btn-box">
+                    <a href="https://forms.gle/De3VeVDBB29MtGZk6" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-pill btn-pill-wine btn-large">
+                        ¡Confirmar!
+                    </a>
+                </div>
+
+                <p class="copyright-footer">Leslie &amp; Walter — 2026</p>
+            </div>
+        </footer>
+
+    </div> <!-- FIN .invitation-wrapper -->
+
+    <!-- =========================================================
+         MODAL DE LISTA DE REGALOS (IDEAS Y SELECCIÓN)
+         ========================================================= -->
+    <div id="giftlist-modal" class="giftlist-modal hidden" aria-hidden="true" role="dialog" aria-labelledby="giftlist-title">
+        <div class="giftlist-modal-backdrop" id="giftlist-backdrop"></div>
+        <div class="giftlist-card shadow-card">
+            <!-- Cabecera del Modal -->
+            <div class="giftlist-header">
+                <div class="giftlist-header-info">
+                    <span class="giftlist-badge-top">IDEAS PARA NUESTRO HOGAR</span>
+                    <h2 class="giftlist-title" id="giftlist-title">Lista de Regalos</h2>
+                    <p class="giftlist-header-note">
+                        Tu compañía es nuestro mejor regalo. Pero si deseas obsequiarnos un detalle, puedes explorar estas sugerencias y marcar las que elijas para tu referencia.
+                    </p>
+                </div>
+                <button type="button" class="btn-close-modal" id="btn-close-giftlist" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Cuerpo con Categorías de Regalos -->
+            <div class="giftlist-body" id="giftlist-body">
+                
+                <!-- CATEGORÍA 1: COCINA Y ELECTRODOMÉSTICOS -->
+                <div class="giftlist-category">
+                    <h4 class="giftlist-category-title">
+                        <span class="cat-icon">🍳</span> Cocina y Electrodomésticos
+                    </h4>
+                    <div class="gift-items-grid">
+                        <label class="gift-item-label" data-name="Cocina Sole">
+                            <input type="checkbox" class="gift-checkbox-input" value="Cocina Sole">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Cocina Sole</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Batidora planetaria Kitchen Aid">
+                            <input type="checkbox" class="gift-checkbox-input" value="Batidora planetaria Kitchen Aid">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Batidora planetaria Kitchen Aid</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Olla Arrocera / Multicooker">
+                            <input type="checkbox" class="gift-checkbox-input" value="Olla Arrocera / Multicooker">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Olla Arrocera / Multicooker</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Cafetera Espresso / Eléctrica">
+                            <input type="checkbox" class="gift-checkbox-input" value="Cafetera Espresso / Eléctrica">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Cafetera Espresso / Eléctrica</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Horno Microondas">
+                            <input type="checkbox" class="gift-checkbox-input" value="Horno Microondas">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Horno Microondas</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Aspiradora Xiaomi robot vacuum 6">
+                            <input type="checkbox" class="gift-checkbox-input" value="Aspiradora Xiaomi robot vacuum 6">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Aspiradora Xiaomi robot vacuum 6</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Set de Ollas y Sartenes de acero inoxidable">
+                            <input type="checkbox" class="gift-checkbox-input" value="Set de Ollas y Sartenes de acero inoxidable">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Set de Ollas y Sartenes de acero inoxidable</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Friobar / Mini Refrigeradora">
+                            <input type="checkbox" class="gift-checkbox-input" value="Friobar / Mini Refrigeradora">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Friobar / Mini Refrigeradora</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Lavadora 20Kg">
+                            <input type="checkbox" class="gift-checkbox-input" value="Lavadora 20Kg">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Lavadora 20Kg</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Máquina para hacer hielos">
+                            <input type="checkbox" class="gift-checkbox-input" value="Máquina para hacer hielos">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Máquina para hacer hielos</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 2: MESA Y COMEDOR -->
+                <div class="giftlist-category">
+                    <h4 class="giftlist-category-title">
+                        <span class="cat-icon">🍽️</span> Mesa y Comedor
+                    </h4>
+                    <div class="gift-items-grid">
+                        <label class="gift-item-label" data-name="Juego de Vajilla Completa (16 o 24 piezas)">
+                            <input type="checkbox" class="gift-checkbox-input" value="Juego de Vajilla Completa">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Juego de Vajilla Completa</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Set de Cubiertos de Acero Inoxidable">
+                            <input type="checkbox" class="gift-checkbox-input" value="Set de Cubiertos de Acero">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Set de Cubiertos de Acero</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Set de Copas de Cristal (Vino y Brindis)">
+                            <input type="checkbox" class="gift-checkbox-input" value="Set de Copas de Cristal">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Set de Copas de Cristal</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Set de Vasos de Vidrio y Jarra">
+                            <input type="checkbox" class="gift-checkbox-input" value="Set de Vasos y Jarra">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Set de Vasos y Jarra</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Alacena para Cocina">
+                            <input type="checkbox" class="gift-checkbox-input" value="Alacena para Cocina">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Alacena para Cocina</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Fuentes y Ensaladeras para Servir">
+                            <input type="checkbox" class="gift-checkbox-input" value="Fuentes y Ensaladeras">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Fuentes y Ensaladeras</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 3: DORMITORIO Y ROPA DE CAMA -->
+                <div class="giftlist-category">
+                    <h4 class="giftlist-category-title">
+                        <span class="cat-icon">🛏️</span> Dormitorio y Ropa de Cama
+                    </h4>
+                    <div class="gift-items-grid">
+                        <label class="gift-item-label" data-name="Juego de Sábanas 100% Algodón (Queen)">
+                            <input type="checkbox" class="gift-checkbox-input" value="Juego de Sábanas Queen">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Juego de Sábanas Algodón (Queen)</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Edredón Plumón / Cubrecama Acolchado">
+                            <input type="checkbox" class="gift-checkbox-input" value="Edredón o Cubrecama Acolchado">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Edredón o Cubrecama Acolchado</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Juego de Almohadas Confort">
+                            <input type="checkbox" class="gift-checkbox-input" value="Juego de Almohadas Confort">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Juego de Almohadas Confort</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Manta o Frazada Suave Térmica">
+                            <input type="checkbox" class="gift-checkbox-input" value="Manta o Frazada Térmica">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Manta o Frazada Térmica</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 4: HOGAR, BAÑO Y ORGANIZACIÓN -->
+                <div class="giftlist-category">
+                    <h4 class="giftlist-category-title">
+                        <span class="cat-icon">✨</span> Hogar, Baño y Organización
+                    </h4>
+                    <div class="gift-items-grid">
+                        <label class="gift-item-label" data-name="Juego de Batas de Baño">
+                            <input type="checkbox" class="gift-checkbox-input" value="Juego de Batas de Baño">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Juego de Batas de Baño</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Plancha a Vapor / Vaporizador Vertical">
+                            <input type="checkbox" class="gift-checkbox-input" value="Plancha a Vapor">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Plancha a Vapor / Vaporizador</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Juego de Toallas de Baño">
+                            <input type="checkbox" class="gift-checkbox-input" value="Juego de Toallas de Baño">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Juego de Toallas de Baño</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                        <label class="gift-item-label" data-name="Set de Recipientes Herméticos de Vidrio">
+                            <input type="checkbox" class="gift-checkbox-input" value="Set de Recipientes Herméticos">
+                            <div class="gift-item-info">
+                                <span class="gift-item-name">Set de Recipientes Herméticos</span>
+                                <span class="gift-item-status">Sugerido para el hogar</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pie del Modal con Contador y Botones -->
+            <div class="giftlist-footer">
+                <div class="giftlist-selected-count" id="giftlist-counter">
+                    <span class="count-badge" id="count-number">0</span> seleccionados
+                </div>
+                <div class="giftlist-footer-actions">
+                    <a href="https://wa.me/51995585320?text=Hola%20Leslie%20y%20Walter%2C%20queremos%20apoyarlos%20con%20un%20regalo%20de%20su%20lista%20de%20bodas" 
+                       id="btn-whatsapp-gift" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-pill btn-pill-outline btn-gift-whatsapp">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.16 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.3z"/>
+                        </svg>
+                        Confirmar por WhatsApp
+                    </a>
+                    <button type="button" class="btn-pill btn-pill-wine" id="btn-done-giftlist">
+                        Listo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICACIÓN (¡COPIADO!) -->
+    <div id="toast" class="toast">¡Copiado al portapapeles!</div>
+
+    <script src="script.js?v=20260912_v2"></script>
+</body>
+</html>

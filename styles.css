@@ -1,0 +1,1777 @@
+/* =========================================================
+   LESLIE & WALTER — INVITACIÓN DE BODA
+   Hoja de Estilos CSS Pura, Responsiva y Anti-Deformación
+   Optimizada para Móviles y Pantallas Grandes (Desktop)
+   ========================================================= */
+
+/* --- 1. VARIABLES DE DISEÑO --- */
+:root {
+    --wine: #670936;            /* Borgoña/Vino principal de Canva */
+    --wine-dark: #440b26;       /* Acento oscuro */
+    --wine-light: #8c1b4f;      /* Hover botones */
+    --wine-soft: rgba(103, 9, 54, 0.08);
+    --gold-accent: #c49a45;
+    --text-main: #494949;       /* Gris suave para textos descriptivos */
+    --text-dark: #222222;       /* Títulos oscuros */
+    --text-light: #ffffff;
+    --bg-outer: #ebe6de;        /* Fondo exterior en pantallas grandes */
+    --bg-paper: #f9f6f0;        /* Fondo pergamino artesanal de boda */
+    --border-light: rgba(103, 9, 54, 0.2);
+
+    /* Tipografías equivalentes a las fuentes de Canva */
+    --font-heading: 'DM Serif Display', Georgia, serif;
+    --font-serif: 'Forum', 'Playfair Display', serif;
+    --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    --transition: all 0.3s ease;
+}
+
+/* --- 2. RESET & BASE --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--bg-outer);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- 3. CONTENEDOR PRINCIPAL RESPONSIVO (MÁXIMO 1024px EN PANTALLAS GRANDES) --- */
+.invitation-wrapper {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: var(--bg-paper);
+    /* Textura de papel de boda elegante: micropuntos gofrados en tonos vino y oro sutil */
+    background-image: 
+        radial-gradient(circle, rgba(103, 9, 54, 0.08) 1.1px, transparent 2.1px),
+        radial-gradient(circle, rgba(196, 154, 69, 0.06) 1.1px, transparent 100.1px);
+    background-size: 18px 18px, 18px 18px;
+    background-position: 0 0, 9px 9px;
+    position: relative;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.08);
+}
+
+/* CONTENEDORES INTERNOS PARA CONTROL DE LECTURA */
+.container-narrow {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container-medium {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.container-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 4. BORDES SEPARADORES DE SECCIÓN (DIVIDERS) --- */
+/* Borde sutil superior en cada sección según requerimiento */
+.section,
+.banner-photo-full {
+    border-top: 1px solid var(--border-light);
+}
+
+.section-divider {
+    display: none;
+}
+
+/* --- 5. TIPOGRAFÍA Y UTILIDADES --- */
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+.title-serif {
+    font-family: var(--font-serif);
+    color: var(--text-dark);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tracking {
+    letter-spacing: 0.15em;
+}
+
+.text-accent {
+    color: var(--wine);
+}
+
+.bold-text {
+    font-weight: 600;
+}
+
+.shadow-card {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.section {
+    padding: 45px 20px;
+    position: relative;
+    background-color: transparent;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 60px 40px;
+    }
+}
+
+/* --- 6. HERO / PORTADA (FOTO 1: foto1-portada.jpg) --- */
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+@media (min-width: 768px) {
+    .hero-header {
+        height: 600px;
+    }
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    filter: brightness(0.85);
+    transition: transform 0.6s ease;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg, 
+        rgba(0,0,0,0.2) 0%, 
+        rgba(0,0,0,0.1) 40%, 
+        rgba(0,0,0,0.55) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    color: var(--text-light);
+    letter-spacing: 0.02em;
+    font-style: italic;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.75);
+    line-height: 1.15;
+}
+
+/* --- 7. SECCIÓN BIENVENIDA Y MÚSICA --- */
+.section-welcome h2 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.welcome-text {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.75;
+    margin-bottom: 28px;
+}
+
+/* REPRODUCTOR DE MÚSICA */
+.music-player-box {
+    margin: 20px auto 30px;
+}
+
+.music-instruction {
+    font-size: 0.95rem;
+    color: #555555;
+    margin-bottom: 14px;
+}
+
+.heart-text-icon {
+    color: var(--wine);
+    display: inline-block;
+    animation: heartBeat 1.8s infinite;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.btn-ctrl {
+    background: none;
+    border: none;
+    color: var(--wine);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    outline: none;
+}
+
+.btn-ctrl:hover {
+    transform: scale(1.15);
+    color: var(--wine-dark);
+}
+
+.btn-heart-play {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: var(--wine);
+    color: var(--text-light);
+    box-shadow: 0 4px 16px rgba(103, 9, 54, 0.35);
+}
+
+.btn-heart-play:hover {
+    background-color: var(--wine-dark);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+.btn-heart-play.playing {
+    animation: heartPulse 1.2s infinite;
+}
+
+.heart-svg {
+    transition: transform 0.2s ease;
+}
+
+.btn-heart-play:active .heart-svg {
+    transform: scale(0.9);
+}
+
+.music-note-float {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 18px;
+    color: var(--wine);
+}
+
+.btn-heart-play.playing .note-1 {
+    animation: floatNote 2s infinite ease-out;
+}
+
+.btn-heart-play.playing .note-2 {
+    animation: floatNote 2s 1s infinite ease-out;
+}
+
+@keyframes floatNote {
+    0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translate(20px, -38px) scale(1.2); }
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(103, 9, 54, 0.35); }
+    50% { transform: scale(1.08); box-shadow: 0 6px 20px rgba(103, 9, 54, 0.6); }
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    30% { transform: scale(1.25); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(1.25); }
+}
+
+.hidden-youtube {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -999;
+}
+
+/* FOTO PAREJA REPRODUCTOR (FOTO 2) */
+.photo-frame-center {
+    width: clamp(210px, 40%, 280px);
+    margin: 28px auto 22px;
+}
+
+.photo-frame-center img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.wedding-main-date {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3.5vw, 1.9rem);
+    color: var(--text-dark);
+    margin: 22px 0 16px;
+    letter-spacing: 0.04em;
+}
+
+.ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 22px auto;
+    max-width: 260px;
+}
+
+.divider-narrow {
+    max-width: 180px;
+    margin: 28px auto;
+}
+
+.ornament-divider .line {
+    flex: 1;
+    height: 1.5px;
+    background-color: var(--wine);
+    opacity: 0.6;
+}
+
+.ornament-divider .dot-circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--wine);
+}
+
+.love-quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+    color: #4a4a4a;
+    line-height: 1.7;
+    margin: 18px 0;
+    padding: 0 15px;
+}
+
+/* --- 8. PADRES Y PADRINOS --- */
+.parents-headline {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.parents-desktop-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .parents-desktop-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+.family-block {
+    margin-bottom: 15px;
+}
+
+.family-role {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.family-names {
+    font-size: 1rem;
+    color: #444444;
+    line-height: 1.65;
+}
+
+.godparents-block {
+    margin-top: 30px;
+}
+
+.godparents-title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: 10px;
+}
+
+/* --- 9. GALERÍA DÚO Y CEREMONIA --- */
+.photos-duo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.duo-item img {
+    width: 100%;
+    height: clamp(240px, 45vw, 380px);
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.title-ceremony-section {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    color: var(--text-main);
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+}
+
+.ceremony-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+@media (min-width: 768px) {
+    .ceremony-details-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        text-align: left;
+        gap: 40px;
+    }
+}
+
+.ceremony-info-item {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-label {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.venue-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    color: var(--wine);
+    margin-bottom: 2px;
+}
+
+.venue-address {
+    font-size: 0.92rem;
+    color: #666666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.venue-schedule {
+    font-size: 1.05rem;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* FOTO EN ARCO (FOTO 5) */
+.arch-photo-container {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    height: 100%;
+    border-radius: 160px 160px 12px 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.arch-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* BOTONES PILL */
+.btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 22px;
+    border-radius: 25px;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1.5px solid transparent;
+}
+
+.btn-pill-outline {
+    background-color: transparent;
+    color: var(--wine);
+    border-color: var(--wine);
+}
+
+.btn-pill-outline:hover {
+    background-color: var(--wine);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+.btn-pill-wine {
+    background-color: var(--wine);
+    color: var(--text-light);
+    border-color: var(--wine);
+    box-shadow: 0 4px 15px rgba(103, 9, 54, 0.28);
+}
+
+.btn-pill-wine:hover {
+    background-color: var(--wine-dark);
+    border-color: var(--wine-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(103, 9, 54, 0.4);
+}
+
+.btn-pill-white {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+}
+
+.btn-pill-white:hover {
+    background-color: var(--text-light);
+    color: var(--wine);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 13px 44px;
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+}
+
+.btn-confirm-wrapper {
+    margin-top: 20px;
+}
+
+/* --- 10. CÓDIGO DE VESTIMENTA (DRESS CODE) --- */
+.dresscode-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    height: clamp(300px, 40vw, 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+}
+
+.dresscode-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100%;
+}
+
+.dresscode-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg, 
+        rgba(0,0,0,0.45) 0%, 
+        rgba(30,5,15,0.2) 100%
+    );
+}
+
+.dresscode-content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+}
+
+.dresscode-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.dresscode-type {
+    font-family: var(--font-heading);
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    margin-bottom: 14px;
+    color: #f7e6d0;
+}
+
+.dresscode-note {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    margin-bottom: 22px;
+    line-height: 1.55;
+    opacity: 0.95;
+}
+
+/* --- 11. ITINERARIO (ZIG-ZAG CONTINUO S-CURVE IDÉNTICO A CANVA) --- */
+.itinerary-title {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin-bottom: 35px;
+}
+
+.itinerary-zigzag-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding: 0 14px;
+    box-sizing: border-box;
+}
+
+.zigzag-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Fila 1: trazo horizontal desde el corazón izquierdo (25%) hasta el riel exterior derecho (6px) */
+.row-1::before {
+    content: '';
+    position: absolute;
+    top: 18px; /* Altura central del círculo de 36px */
+    left: 25%;
+    right: 6px;
+    height: 3px;
+    background-color: var(--wine);
+    z-index: 1;
+}
+
+/* Fila 1: bajada vertical por el riel derecho exterior (fuera de las tarjetas, nunca sobre los iconos ni textos) */
+.row-1::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 6px;
+    bottom: -38px; /* Conecta con la Fila 2 cruzando el gap */
+    width: 3px;
+    background-color: var(--wine);
+    z-index: 1;
+}
+
+/* Fila 2: trazo horizontal continuo de riel a riel pasando por ambos corazones */
+.row-2::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 6px;
+    right: 6px;
+    height: 3px;
+    background-color: var(--wine);
+    z-index: 1;
+}
+
+/* Fila 2: bajada vertical por el riel izquierdo exterior (fuera de las tarjetas) */
+.row-2::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 6px;
+    bottom: -38px; /* Conecta con la Fila 3 cruzando el gap */
+    width: 3px;
+    background-color: var(--wine);
+    z-index: 1;
+}
+
+/* Fila 3: trazo horizontal desde el riel izquierdo (6px) hasta el corazón derecho (25%) */
+.row-3::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 6px;
+    right: 25%;
+    height: 3px;
+    background-color: var(--wine);
+    z-index: 1;
+}
+
+.row-3::after {
+    display: none;
+}
+
+.zigzag-card {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 4px;
+}
+
+/* Medalla de corazón sobrepuesta a la línea con borde sólido que la corta como en Canva */
+.zigzag-heart-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--wine);
+    border: 3px solid var(--bg-paper);
+    box-shadow: 0 2px 8px rgba(103, 9, 54, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+.zigzag-icon-box {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    color: var(--wine);
+    position: relative;
+    z-index: 2;
+}
+
+.zigzag-time {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #494949;
+    line-height: 1.25;
+    position: relative;
+    z-index: 2;
+}
+
+.zigzag-label {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: #555555;
+    line-height: 1.35;
+    position: relative;
+    z-index: 2;
+}
+
+/* Amenizan */
+.amenizan-block {
+    margin-top: 35px;
+    padding-top: 15px;
+}
+
+.amenizan-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: 8px;
+}
+
+.amenizan-item {
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* --- 12. BANNERS FOTOGRÁFICOS COMPLETOS --- */
+.banner-photo-full {
+    width: 100%;
+    padding: 35px 20px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .banner-photo-full {
+        padding: 50px 40px;
+    }
+}
+
+.banner-photo-full img {
+    width: 100%;
+    height: auto;
+    max-height: 540px;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- 13. MESA DE REGALOS / BANCO --- */
+.gifts-icon-top {
+    margin-bottom: 14px;
+}
+
+.gifts-headline {
+    font-size: clamp(1.65rem, 3.5vw, 2.2rem);
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.gifts-subtitle {
+    font-size: 0.98rem;
+    color: #555555;
+    line-height: 1.65;
+    margin-bottom: 30px;
+}
+
+.bank-accounts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .bank-accounts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+}
+
+.bank-card {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    padding: clamp(16px, 4vw, 24px);
+    text-align: left;
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.bank-header {
+    margin-bottom: 14px;
+}
+
+.bank-badge {
+    display: inline-block;
+    background-color: var(--wine);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+
+.yape-badge {
+    background-color: #6c2382;
+}
+
+.account-row {
+    margin-bottom: 12px;
+}
+
+.account-type {
+    display: block;
+    font-size: 0.82rem;
+    color: #777777;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.copy-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px dashed rgba(103, 9, 54, 0.3);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.account-number {
+    font-family: monospace;
+    font-size: clamp(0.78rem, 2.8vw, 1.02rem);
+    font-weight: 600;
+    color: var(--text-dark);
+    word-break: break-all;
+    min-width: 0;
+}
+
+.yape-number {
+    font-size: clamp(1.05rem, 3.2vw, 1.22rem);
+    color: #6c2382;
+}
+
+.btn-copy {
+    background: none;
+    border: none;
+    color: var(--wine);
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    border-radius: 4px;
+}
+
+.btn-copy:hover {
+    color: var(--wine-dark);
+    transform: scale(1.18);
+}
+
+.account-holder {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-top: 12px;
+}
+
+.traditional-gifts-box {
+    margin-top: 36px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.traditional-gifts-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    max-width: 320px;
+}
+
+.traditional-gifts-divider::before,
+.traditional-gifts-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--border-light);
+}
+
+.traditional-gifts-divider span {
+    padding: 0 16px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--wine);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.traditional-gifts-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 3.2vw, 1.95rem);
+    color: var(--wine);
+    margin-bottom: 12px;
+}
+
+.traditional-gifts-desc {
+    font-size: 0.98rem;
+    color: #555555;
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto 22px;
+}
+
+.btn-giftlist-trigger {
+    box-shadow: 0 6px 22px rgba(103, 9, 54, 0.3);
+}
+
+/* --- 14. SUGERENCIA DE CANCIONES --- */
+.songs-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    height: clamp(290px, 35vw, 360px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+}
+
+.songs-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.songs-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20,5,15,0.5) 100%, rgba(40,5,20,0.85) 100%);
+}
+
+.songs-content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+}
+
+.songs-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 12px;
+}
+
+.songs-description {
+    font-size: clamp(0.92rem, 2vw, 1.05rem);
+    margin-bottom: 22px;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* --- 15. ÁLBUM DIGITAL (QR) --- */
+.album-camera-icon {
+    margin-bottom: 12px;
+}
+
+.album-title {
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+    margin-bottom: 16px;
+}
+
+.album-description {
+    font-size: 0.96rem;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.qr-wrapper {
+    width: clamp(180px, 35%, 220px);
+    height: clamp(180px, 35%, 220px);
+    margin: 0 auto 28px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 14px;
+    border: 2px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-code-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.btn-album-box {
+    margin-top: 10px;
+}
+
+/* --- 16. BRINDIS Y DESPEDIDA --- */
+.toast-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    height: clamp(320px, 40vw, 420px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+}
+
+.toast-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.toast-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,0,10,0.4) 0%, rgba(50,5,25,0.85) 100%);
+}
+
+.toast-content {
+    position: relative;
+    z-index: 2;
+    padding: 28px;
+}
+
+.toast-text-main {
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    line-height: 1.65;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.toast-text-sub {
+    font-size: clamp(0.88rem, 2vw, 1rem);
+    opacity: 0.9;
+    line-height: 1.55;
+    margin-bottom: 18px;
+}
+
+.toast-signature {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+}
+
+.toast-initials {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    color: #f7e6d0;
+    letter-spacing: 0.08em;
+}
+
+/* --- 17. CALENDARIO, CONTADOR Y CONFIRMACIÓN FINAL --- */
+.section-final-rsvp {
+    padding: 40px 20px 60px;
+    background-color: rgba(103, 9, 54, 0.03);
+    border-top: 1px solid var(--border-light);
+}
+
+.calendar-month {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    color: var(--text-dark);
+    margin-bottom: 22px;
+}
+
+.days-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(4px, 1.8vw, 14px);
+    margin: 0 auto 35px;
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+}
+
+.day-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: clamp(34px, 9.5vw, 46px);
+    flex-shrink: 1;
+}
+
+.day-name {
+    font-size: clamp(0.75rem, 2vw, 0.88rem);
+    color: #777777;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+}
+
+.day-num {
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 3.2vw, 1.35rem);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.day-cell.day-active .day-name {
+    color: var(--wine);
+    font-weight: 700;
+}
+
+.day-heart-circle {
+    position: relative;
+    width: clamp(36px, 10vw, 46px);
+    height: clamp(36px, 10vw, 46px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-heart-circle .day-num {
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+}
+
+.heart-calendar-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--wine);
+    z-index: 1;
+    filter: drop-shadow(0 3px 6px rgba(103, 9, 54, 0.3));
+}
+
+/* CONTADOR REGRESIVO PRINCIPAL Y SUPERIOR */
+.countdown-top-wrapper {
+    margin: 10px auto 24px;
+    width: 100%;
+}
+
+.countdown-top-badge {
+    font-size: 0.82rem;
+    font-family: var(--font-sans);
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.14em;
+}
+
+.countdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(4px, 1.5vw, 12px);
+    margin: 0 auto 35px;
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+}
+
+.countdown-box {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: clamp(6px, 1.8vw, 12px) clamp(4px, 1.5vw, 10px);
+    flex: 1;
+    min-width: 0;
+    max-width: 82px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.time-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 4.5vw, 2.4rem);
+    color: var(--wine);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.time-label {
+    font-size: clamp(0.62rem, 1.8vw, 0.72rem);
+    color: #888888;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+.countdown-sep {
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    color: var(--wine);
+    font-weight: 700;
+    margin-top: -8px;
+    flex-shrink: 0;
+}
+
+.final-confirm-btn-box {
+    margin-bottom: 28px;
+}
+
+.copyright-footer {
+    font-size: 0.85rem;
+    color: #888888;
+    letter-spacing: 0.05em;
+}
+
+/* --- 18. TOAST NOTIFICACIÓN FLOTANTE --- */
+.toast {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--wine-dark);
+    color: #ffffff;
+    padding: 13px 26px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast.show {
+    bottom: 25px;
+    opacity: 1;
+}
+
+/* --- 19. ANIMACIONES FADE-IN EN SCROLL --- */
+.section-fade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 20. AJUSTES PARA PANTALLAS ULTRA PEQUEÑAS (< 360px) --- */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .days-strip {
+        gap: 3px;
+    }
+    .day-cell {
+        width: 32px;
+    }
+    .countdown-container {
+        gap: 3px;
+    }
+    .countdown-box {
+        min-width: 0;
+        padding: 6px 2px;
+    }
+    .time-number {
+        font-size: 1.3rem;
+    }
+    .itinerary-zigzag-wrap {
+        max-width: 300px;
+        padding: 0 4px;
+    }
+    .row-1::before { right: 4px; }
+    .row-1::after { right: 4px; }
+    .row-2::before { left: 4px; right: 4px; }
+    .row-2::after { left: 4px; }
+    .row-3::before { left: 4px; }
+}
+
+/* --- 21. MODAL DE BIENVENIDA / ABRIR INVITACIÓN (AUDIO GARANTIZADO) --- */
+.welcome-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(40, 10, 25, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.welcome-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.welcome-card {
+    background-color: var(--bg-paper);
+    background-image: 
+        radial-gradient(circle, rgba(103, 9, 54, 0.08) 1.1px, transparent 1.1px),
+        radial-gradient(circle, rgba(196, 154, 69, 0.06) 1.1px, transparent 1.1px);
+    background-size: 18px 18px, 18px 18px;
+    background-position: 0 0, 9px 9px;
+    border: 2px solid var(--wine);
+    border-radius: 18px;
+    padding: 40px 30px;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+    animation: scaleIn 0.45s ease-out;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.welcome-subtitle {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    color: var(--wine);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.welcome-names {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    line-height: 1.15;
+}
+
+.welcome-date-badge {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--wine-dark);
+    margin-bottom: 26px;
+    letter-spacing: 0.08em;
+}
+
+.btn-open-invite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--wine);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 36px;
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(103, 9, 54, 0.4);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-open-invite:hover {
+    background-color: var(--wine-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(103, 9, 54, 0.55);
+}
+
+.welcome-note {
+    display: block;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: #777777;
+    font-style: italic;
+}
+
+/* --- 22. MODAL DE LISTA DE REGALOS (INTERACTIVO Y RESPONSIVO) --- */
+.giftlist-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.giftlist-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.giftlist-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 5, 18, 0.78);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.giftlist-card {
+    position: relative;
+    background-color: var(--bg-paper);
+    background-image: 
+        radial-gradient(circle, rgba(103, 9, 54, 0.08) 1.1px, transparent 1.1px),
+        radial-gradient(circle, rgba(196, 154, 69, 0.06) 1.1px, transparent 1.1px);
+    background-size: 18px 18px, 18px 18px;
+    background-position: 0 0, 9px 9px;
+    border: 2px solid var(--wine);
+    border-radius: 20px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    animation: scaleIn 0.35s ease-out;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.giftlist-header {
+    padding: 22px 24px 16px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(4px);
+}
+
+.giftlist-header-info {
+    text-align: left;
+    flex: 1;
+}
+
+.giftlist-badge-top {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    color: var(--wine);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.giftlist-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+    color: var(--text-dark);
+    margin: 0 0 6px 0;
+    line-height: 1.2;
+}
+
+.giftlist-header-note {
+    font-size: 0.88rem;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.btn-close-modal {
+    background: none;
+    border: none;
+    color: #666666;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.btn-close-modal:hover {
+    color: var(--wine);
+    background-color: rgba(103, 9, 54, 0.08);
+    transform: rotate(90deg);
+}
+
+.giftlist-body {
+    padding: 20px 22px;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.giftlist-category {
+    text-align: left;
+}
+
+.giftlist-category-title {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--wine);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(103, 9, 54, 0.25);
+}
+
+.cat-icon {
+    font-size: 1.2rem;
+}
+
+.gift-items-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+@media (min-width: 520px) {
+    .gift-items-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.gift-item-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(103, 9, 54, 0.16);
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.gift-item-label:hover {
+    background-color: #ffffff;
+    border-color: var(--wine);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(103, 9, 54, 0.08);
+}
+
+.gift-item-label.checked {
+    background-color: rgba(103, 9, 54, 0.09);
+    border-color: var(--wine);
+}
+
+.gift-checkbox-input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1.8px solid #999999;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+}
+
+.gift-checkbox-input:checked {
+    background-color: var(--wine);
+    border-color: var(--wine);
+}
+
+.gift-checkbox-input:checked::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.gift-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.gift-item-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.gift-item-status {
+    font-size: 0.76rem;
+    color: #888888;
+    margin-top: 2px;
+}
+
+.gift-item-label.checked .gift-item-status {
+    color: var(--wine);
+    font-weight: 600;
+}
+
+.giftlist-footer {
+    padding: 14px 22px;
+    border-top: 1px solid var(--border-light);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (min-width: 520px) {
+    .giftlist-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.giftlist-selected-count {
+    font-size: 0.9rem;
+    color: #555555;
+    font-weight: 500;
+    text-align: center;
+}
+
+.count-badge {
+    display: inline-block;
+    background-color: var(--wine);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-right: 4px;
+}
+
+.giftlist-footer-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-gift-whatsapp {
+    font-size: 0.92rem;
+    padding: 8px 18px;
+}
