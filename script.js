@@ -42,11 +42,11 @@ function initScrollAnimations() {
 
 /* =========================================================
    2. CONTADOR REGRESIVO EN TIEMPO REAL (SUPERIOR E INFERIOR)
-   Fecha de la Boda: 21 de Noviembre de 2026 a las 11:00 AM
+   Fecha de la Boda: 21 de Noviembre de 2026 a las 12:00 PM
    ========================================================= */
 function initCountdown() {
-    // 21 de Noviembre de 2026 a las 11:00:00 (Hora local de Perú / UTC-5)
-    const weddingDate = new Date("2026-11-21T11:00:00").getTime();
+    // 21 de Noviembre de 2026 a las 12:00:00 (Hora local de Perú / UTC-5)
+    const weddingDate = new Date("2026-11-21T12:00:00").getTime();
 
     const daysEls = document.querySelectorAll(".time-days, #days");
     const hoursEls = document.querySelectorAll(".time-hours, #hours");
